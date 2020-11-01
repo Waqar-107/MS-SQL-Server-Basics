@@ -65,3 +65,73 @@ where order_id = 6 and (quantity * unit_price) > 30;
 select *
 from customers
 where state in ("VA", "FL", "GA");
+
+-- exercise
+select *
+from products
+where quantity_in_stock in (49, 38, 72);
+
+-- between operator
+select *
+from customers
+where points between 1000 and 3000;
+
+-- exercise
+select *
+from customers
+where birth_date between "1990-01-01" and "2000-01-01";
+
+-- like operator
+-- % means any number of char
+-- _ means only a single character
+select *
+from customers
+where last_name like 'b%';
+
+select *
+from customers
+where last_name like 'brush%';
+
+select *
+from customers
+where last_name like '_y';
+
+-- exercise
+select *
+from customers
+where address like '%trail%' or address like '%avenue%';
+
+select *
+from customers
+where phone like '%9';
+
+-- regexp
+select *
+from customers
+where last_name regexp 'field';
+
+-- multiple search
+select *
+from customers
+where last_name regexp 'field|mac|rose';
+
+-- exercise
+-- first names are elka or ambur
+select *
+from customers
+where first_name regexp "^ELKA$|^AMBUR$";
+
+-- last names end with ey or on
+select *
+from customers
+where last_name regexp "EY$|ON$";
+
+-- last name start with my or contain se
+select *
+from customers
+where first_name regexp "^MY|SE";
+
+-- last name contains b followed by r or u
+select *
+from customers
+where last_name regexp "B[RU]";
