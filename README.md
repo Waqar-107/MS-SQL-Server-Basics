@@ -5,6 +5,7 @@
 1. comment appending `--` at the start of the line.
 2. `use database_name` selects the database to query.
 3. `concat(args)` will concatenate the arguments given.
+4. order of query: `select -> from -> where -> order by -> limit`
 
 ### codes
 
@@ -99,6 +100,7 @@
     ```
 
     `%` means any number of character. this can be used at the start, end, middle anywhere.
+
     `_` means a single character. can be used anywhere. the comparisons ignores case(upper or lower).
 
 11. we can use `regexp` to compare strings
@@ -119,5 +121,40 @@
 
     `[a-z]` character should belong in the range.
 
+12. we can look for empty fields or slect those that doesn't have any particular field null.
+
+    ```sql
+    select *
+    from customers
+    where phone is null;
+
+    select *
+    from customers
+    where phone is not null;
+    ```
+
+13. we can sort data by columns. by default by ascending, using `desc` in descending.
+
+    ```sql
+    select order_id, product_id, quantity, unit_price
+    from order_items
+    where order_id = 2
+    order by (quantity * unit_price) desc;
+
+    -- we can use alias for sorting too.
+    select order_id, product_id, quantity, unit_price, (quantity * unit_price) as total_price
+    from order_items
+    where order_id = 2
+    order by total_price desc;
+
+    ```
+
+14. we can limit the number of results given. first param is the offset. that is how many to skip. it is optional.
+    ```sql
+    select *
+    from customers
+    limit 2, 5;
+    ```
+
 start from
-https://www.youtube.com/watch?v=7S_tz1z_5bA&list=PLFtRSCvCGryX4CrSJlBF_-pJK0IEDMI16&index=1&t=4311s
+https://www.youtube.com/watch?v=7S_tz1z_5bA&list=PLFtRSCvCGryX4CrSJlBF_-pJK0IEDMI16&index=1&t=5090s

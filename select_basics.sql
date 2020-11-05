@@ -135,3 +135,12 @@ where first_name regexp "^MY|SE";
 select *
 from customers
 where last_name regexp "B[RU]";
+
+-- check if field is null
+select * 
+from customers
+where phone is NULL;
+
+select *
+from customers
+where phone is not null;
