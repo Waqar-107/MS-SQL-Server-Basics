@@ -1,13 +1,13 @@
 # MS SQL Server Basics
 
-- Order of query: `select -> from -> where -> group by -> order by -> limit`
+- Order of query: `select -> from -> where -> group by -> order by`
 
 - Wrap with `COALESCE()` It, returns the first non-null value in a list.
 
   ```sql
   SELECT COALESCE(NULL, NULL, NULL, 'W3Schools.com', NULL, 'Example.com');
   ```
-
+  
 - Check the version of SQL Server
 
   ```sql
