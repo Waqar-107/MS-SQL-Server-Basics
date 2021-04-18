@@ -1,7 +1,5 @@
 # MS SQL Server Basics
 
-# SQL Basics in SQL Server
-
 - Order of query: `select -> from -> where -> group by -> order by -> limit`
 
 - Wrap with `COALESCE()` It, returns the first non-null value in a list.
