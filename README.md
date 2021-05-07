@@ -1,5 +1,7 @@
 # MS SQL Server Basics
 
+https://stackoverflow.com/questions/7296846/how-to-implement-one-to-one-one-to-many-and-many-to-many-relationships-while-de
+
 - Order of query: `select -> from -> where -> group by -> order by`
 
 - Wrap with `COALESCE()` It, returns the first non-null value in a list.
